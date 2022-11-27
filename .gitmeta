@@ -1,0 +1,4 @@
+chown -h 1000:1000 './flic'
+chmod 0664 './flic'
+/usr/bin/touch -hcmd "2021-11-26 17:15:13.0482974970 -0300" './flic'
+/usr/bin/touch -hcad "2022-11-27 16:47:25.8663943740 -0300" './flic'
