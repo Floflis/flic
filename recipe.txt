@@ -1,0 +1,34 @@
+sudo dd if=/dev/zero bs=1M count=7168 >> 2021-05-07-raspios-buster-armhf.img
+https://wiki.debian.org/RaspberryPi/qemu-user-static
+
+sudo apt-get update
+sudo apt install build-essential
+sudo apt install cmake
+
+sudo apt install make libsodium-dev libclang-dev pkg-config libssl-dev libxxhash-dev libzstd-dev clang
+
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+
+apt install pkg-config libssl-dev
+apt install libxcb-composite0-dev libx11-dev
+
+rustup update
+
+cargo install nu --features=extra
+
+git clone https://github.com/nushell/nushell.git && cd nushell && cargo build --workspace --features=extra
+
+git clone https://github.com/starship/starship.git && cd nushell && cargo build
+
+apt install libz-dev
+
+wget https://www.openssl.org/source/openssl-1.1.1.tar.gz
+tar -xvzf openssl-1.1.1.tar.gz
+cd openssl-1.1.1/
+./Configure linux-aarch64 --prefix=/usr/local/ssl --openssldir=/usr/local/ssl shared zlib
+make -j$(($(nproc)+1))
+sudo make install
+sudo echo 'LD_LIBRARY_PATH=/usr/local/ssl/lib:${LD_LIBRARY_PATH}' >> /etc/environment
+rm openssl-1.1.1.tar.gz
+sudo rm openssl-1.1.1 -r
+https://gist.github.com/Matheus-Garbelini/9cedb9f71a42ad037684e24aa19eb837

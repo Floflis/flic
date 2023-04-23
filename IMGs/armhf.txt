@@ -1,0 +1,2 @@
+Only RaspiOS available
+Devices: RaspberryPi Zero (and Zero W)
