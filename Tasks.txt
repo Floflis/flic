@@ -1,6 +1,10 @@
 - differentiate build and attempt (so no need anymore for FLIC.sh for now)
+- FLIC-local.sh: now only $buildlog_dir, but also $attemptlog_dir
 
 implement these 3 at same time:
+- don't anymore get the year from $current_distro/config, but from https://bard.google.com/u/4/chat/bc605e2e07b64d64
 - doing an new attempt will generate a build number as well!
-- auto change DNA's $buildlog_dir/config's $osbuild, $year, $specialbuildattempt
-- run "$current_distro"/layers/soil/include/img/watermarkmaker/run.sh
+- auto change DNA's $current_distro/config's $osbuild, $year, $specialbuildattempt
+- run $current_distro/layers/soil/include/img/watermarkmaker/run.sh
+
+- /hooks: post-init-build (in my personal case, will read from $diruse - ensure export to hooks - and create an new $diruse.txt in attemptsTasks), post-finish-build
