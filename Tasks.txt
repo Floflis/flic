@@ -1,0 +1,6 @@
+- differentiate build and attempt (so no need anymore for FLIC.sh for now)
+
+implement these 3 at same time:
+- doing an new attempt will generate a build number as well!
+- auto change DNA's $buildlog_dir/config's $osbuild, $year, $specialbuildattempt
+- run "$current_distro"/layers/soil/include/img/watermarkmaker/run.sh
